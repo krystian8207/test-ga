@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run test script
-        run: docker run -v `pwd`:/mnt appsilon/paraproj:1.3 bash -c "/mnt/run.R"
+        run: docker run -v `pwd`:/mnt appsilon/paraproj:1.3 bash -c "Rscript '/mnt/run.R'"
         env:
           TEST_ENV_VAR: ${{ secrets.TEST_ENV_VAR }}
 
